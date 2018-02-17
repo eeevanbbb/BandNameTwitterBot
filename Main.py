@@ -87,8 +87,11 @@ class Tweeter(object):
             time.sleep(10)
 
 class BandNameGenerator(object):
+    def __init__(self, source):
+        self.source = source
+
     def new_tweet(self):
-        r = requests.get('https://bots-176817.appspot.com/band_name')
+        r = requests.get(self.source)
         response = r.json()
         if "name" in response:
             return response["name"]
@@ -98,10 +101,11 @@ class BandNameGenerator(object):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Run the bot.')
-    parser.add_argument('--twitter', dest='twitter_file', type=str, default='twitter_config.txt', help='The file containing the Twitter keys, one per line with the format key_name=key_value (default: config/twitter.txt)')
+    parser.add_argument('--twitter', dest='twitter_file', type=str, default='twitter_config.txt', help='The file containing the Twitter keys, one per line with the format key_name=key_value (default: twitter_config.txt)')
+    parser.add_argument('--source', dest='source', type=str, default='https://bots-176817.appspot.com/band_name', help='The URL from which to request band names (default: https://bots-176817.appspot.com/band_name)')
     args = parser.parse_args()
 
-    generator = BandNameGenerator()
+    generator = BandNameGenerator(args.source)
     tweeter = Tweeter(args.twitter_file, generator)
     tweeter.schedule_hourly()
 
