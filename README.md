@@ -10,7 +10,7 @@
 `pip install -r Requirements.txt`
 
 ## Usage
-usage: Main.py [-h] [--twitter TWITTER_FILE]
+usage: Main.py [-h] [--twitter TWITTER_FILE] [--source SOURCE]
 
 Run the bot.
 
@@ -19,7 +19,9 @@ optional arguments:
   --twitter TWITTER_FILE
                         The file containing the Twitter keys, one per line
                         with the format key_name=key_value (default:
-                        config/twitter.txt)
+                        twitter_config.txt)
+  --source SOURCE       The URL from which to request band names (default:
+                        https://bots-176817.appspot.com/band_name)
 
 ## Source
 
