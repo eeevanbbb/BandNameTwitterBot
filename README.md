@@ -20,3 +20,7 @@ optional arguments:
                         The file containing the Twitter keys, one per line
                         with the format key_name=key_value (default:
                         config/twitter.txt)
+
+## Source
+
+The band names come from a markov chain based on band names contributed to a private Facebook.com group that you cannot join.
