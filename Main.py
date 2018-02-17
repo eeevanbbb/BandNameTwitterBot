@@ -81,13 +81,14 @@ class Tweeter(object):
         schedule.every().hour.do(self.tweet)
         
     def begin_loop(self):
+        self.tweet()
         while True:
             schedule.run_pending()
             time.sleep(10)
 
 class BandNameGenerator(object):
     def new_tweet(self):
-        r = requests.get('http://bands.evanb.io/band_name')
+        r = requests.get('https://bots-176817.appspot.com/band_name')
         response = r.json()
         if "name" in response:
             return response["name"]
