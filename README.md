@@ -26,3 +26,9 @@ optional arguments:
 ## Source
 
 The band names come from a markov chain based on band names contributed to a private Facebook.com group that you cannot join.
+
+But you can get as many of the band names as you like here: http://bands.evanb.io
+
+## Credit
+
+Credit goes to the hundreds of people who have contributed band names to the Facebook.com group that was used to train this bot. Thanks! You have been replaced!
