@@ -72,7 +72,7 @@ class Tweeter(object):
             try:
                 self.twitter_api.PostUpdate(tweet_text)
                 print('Tweeting: "%s"' % tweet_text)
-            except TwitterError as e:
+            except twitter.TwitterError as e:
                 print('WARNING: Unable to tweet: "' + tweet + '"' + str(e))
         else:
             print('WARNING: Generator failed to generate tweet text.')
