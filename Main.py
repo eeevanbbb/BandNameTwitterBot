@@ -71,7 +71,7 @@ class Tweeter(object):
         if tweet_text:
             try:
                 self.twitter_api.PostUpdate(tweet_text)
-                print('Tweeting: "%s"' % tweet_text)
+                print('Tweeting: "%s"' % tweet_text.encode('raw_unicode_escape'))
             except twitter.TwitterError as e:
                 print('WARNING: Unable to tweet: "' + tweet + '"' + str(e))
         else:
